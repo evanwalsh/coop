@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 04 Mar 2012 00:37:11 GMT
+Content-Type: application/xml; charset=utf-8
+Connection: close
+Status: 200
+X-Powered-By: Phusion Passenger (mod_rails/mod_rack)
+X-UA-Compatible: IE=Edge,chrome=1
+Cache-Control: no-cache
+X-Runtime: 0.023520
+Location: /groups/12345/agenda
+Set-Cookie: _co-op_session=BAh7ByIPc2Vzc2lvbl9pZCIlZDRkZGFhNGNiMWVmMWEyZTZiMmExNWVjM2YxNmIxNmIiDHVzZXJfaWRpAile--0c552b36c14b24f66724a72caaf6d9ba43360fd5; path=/; HttpOnly
+X-Harvest-Box: cluster1
+X-Harvest-FE: lb2
+X-Harvest-DC: vxny
+Transfer-Encoding: Identity

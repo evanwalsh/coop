@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 03 Mar 2012 19:28:55 GMT
+Content-Type: application/json; charset=utf-8
+Connection: close
+Status: 200
+X-Powered-By: Phusion Passenger (mod_rails/mod_rack)
+X-Runtime: 0.020226
+Set-Cookie: _co-op_session=BAh7ByIPc2Vzc2lvbl9pZCIlMTdjNDFlNTBiY2JhNzA1OGYwMzlmYjY5YzI0ZWFiMmUiDHVzZXJfaWRpAile--2b6f78acecbe6477f292c7d8b9b7a5f0741a19b3; path=/; HttpOnly
+X-UA-Compatible: IE=Edge,chrome=1
+Etag: "6e843eaf4cf267e595b2e7530e6848a7"
+Cache-Control: max-age=0, private, must-revalidate
+X-Harvest-Box: cluster2
+X-Harvest-FE: lb2
+X-Harvest-DC: vxny
+Transfer-Encoding: Identity
+
+{"created_at":"2012-03-02T19:39:35-08:00","first_name":"Evan","updated_at":"2012-03-03T08:23:02-08:00","email":"evan@massivedanger.com","avatar_thumb_url":"http://coopapp.com/uploads/avatars/12345/thumb/9-m.png?1330791782","last_name":"Walsh","city":null,"has_harvest_credential":false,"id":12345}

@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 04 Mar 2012 00:32:16 GMT
+Content-Type: application/json; charset=utf-8
+Connection: close
+Status: 200
+X-Powered-By: Phusion Passenger (mod_rails/mod_rack)
+X-UA-Compatible: IE=Edge,chrome=1
+Cache-Control: max-age=0, private, must-revalidate
+Etag: "3c46ff638cbed13804baf19b16e4eba3"
+X-Runtime: 0.019676
+Set-Cookie: _co-op_session=BAh7ByIPc2Vzc2lvbl9pZCIlYmJkYWJmOGZkZmE2YzdkZTQwMGZjYTY4NmQ2NjMzMDgiDHVzZXJfaWRpAile--a7c96aefb7c6d25acc5d28da6833eddad5ab291d; path=/; HttpOnly
+X-Harvest-Box: cluster1
+X-Harvest-FE: lb1
+X-Harvest-DC: vxny
+Transfer-Encoding: Identity
+
+{"agenda_html":"<ul>\n\t<li>Bacon slap</li>\n\t<li>Bacon slap</li>\n\t<li>Bacon slap</li>\n\t<li>Bacon slap</li>\n</ul>","user_id":12345,"agenda":"* Bacon slap\n* Bacon slap\n* Bacon slap\n* Bacon slap"}
