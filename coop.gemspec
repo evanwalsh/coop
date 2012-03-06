@@ -4,8 +4,8 @@ require File.expand_path('../lib/coop/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Evan Walsh"]
   gem.email         = ["evan@nothingconcept.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Interact with the Co-op API with Ruby}
+  gem.summary       = %q{Interact with the Co-op API with Ruby}
   gem.homepage      = ""
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
@@ -21,6 +21,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "minitest", "~> 2.11.3"
   gem.add_development_dependency "guard-minitest", "~> 0.5.0"
   gem.add_development_dependency "turn", "~> 0.9.3"
+  gem.add_development_dependency "hashie", "~> 1.2.0"
   
   if RUBY_PLATFORM.downcase.include?("darwin")
     gem.add_development_dependency "growl", "~> 1.0.3"
