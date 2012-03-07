@@ -2,14 +2,22 @@ require 'test_helper'
 
 class TestAPIObject < MiniTest::Unit::TestCase
   def setup
-    @object = APIObject.new
+    @object = APIObject.new({
+      test: true,
+      name: "object",
+      value: "APIObject",
+      arbitrary_key: "this"
+    })
   end
   
-  def test_new_is_session
-    assert_instance_of Coop::Session, @coop
+  def test_new
+    assert_instance_of APIObject, @object
   end
   
-  def test_group_object
-    assert_instance_of Coop::Group, @coop.group(12345)
+  def test_mash
+    assert_equal true, @object.test
+    assert_equal "object", @object.name
+    assert_equal "APIObject", @object.value
+    assert_equal "this", @object.arbitrary_key
   end
 end

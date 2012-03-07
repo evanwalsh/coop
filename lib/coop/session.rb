@@ -6,5 +6,9 @@ module Coop
       @email = email
       @password = password
     end
+    
+    def group(id)
+      Coop::Group.new(id)
+    end
   end
 end

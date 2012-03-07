@@ -9,7 +9,7 @@ class TestSession < MiniTest::Unit::TestCase
     assert_instance_of Coop::Session, @coop
   end
   
-  def test_group_object
-    assert_instance_of Coop::Group, @coop.group(12345)
+  def test_group_method
+    assert_respond_to @coop, :group
   end
 end
