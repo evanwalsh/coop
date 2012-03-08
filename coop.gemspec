@@ -26,4 +26,6 @@ Gem::Specification.new do |gem|
   if RUBY_PLATFORM.downcase.include?("darwin")
     gem.add_development_dependency "growl", "~> 1.0.3"
   end
+  
+  gem.add_dependency "httparty", "~> 0.8.1"
 end
