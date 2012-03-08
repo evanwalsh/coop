@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["evan@nothingconcept.com"]
   gem.description   = %q{Interact with the Co-op API with Ruby}
   gem.summary       = %q{Interact with the Co-op API with Ruby}
-  gem.homepage      = ""
+  gem.homepage      = "http://github.com/evanwalsh/coop"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
