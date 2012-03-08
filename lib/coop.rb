@@ -24,6 +24,15 @@ module Coop
       Coop::Session.new(email, password)
     end
     
+    # Public: Parse an HTTParty response into APIObjects
+    #
+    # *args - any valid arguments for HTTParty.get
+    #
+    # Examples
+    #
+    #   Coop.get_parsed("/groups/12345")
+    #
+    # Returns Array or APIObject, depending on response
     def get_parsed(*args)
       APIObject.parse_response(self.get(*args))
     end
