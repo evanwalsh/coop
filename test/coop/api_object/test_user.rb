@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class TestAgenda < MiniTest::Unit::TestCase
+class TestUser < MiniTest::Unit::TestCase
   def setup
     @coop = Coop.new("test@example.com", "password")
   end
   
   def test_new_object
-    assert_instance_of Coop::Agenda, Coop::Agenda.new
+    assert_instance_of Coop::User, Coop::User.new
   end
 end
