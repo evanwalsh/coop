@@ -1,5 +1,4 @@
 require "coop/api_object"
-require "coop/group"
 require "coop/session"
 require "coop/version"
 

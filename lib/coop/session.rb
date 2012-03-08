@@ -10,5 +10,9 @@ module Coop
     def group(id)
       Coop::Group.new(id)
     end
+    
+    def user(id)
+      Coop::User.new(id)
+    end
   end
 end
