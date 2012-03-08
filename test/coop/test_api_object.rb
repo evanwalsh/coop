@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TestAPIObject < MiniTest::Unit::TestCase
   def setup
-    @object = APIObject.new({
+    @object = Coop::APIObject.new({
       test: true,
       name: "object",
       value: "APIObject",
@@ -11,7 +11,7 @@ class TestAPIObject < MiniTest::Unit::TestCase
   end
   
   def test_new
-    assert_instance_of APIObject, @object
+    assert_instance_of Coop::APIObject, @object
   end
   
   def test_mash
