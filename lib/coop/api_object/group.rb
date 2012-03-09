@@ -52,5 +52,17 @@ module Coop
     def agenda
       Agenda.new({ group_id: self.id })
     end
+    
+    # Public: The base for all user API calls
+    #
+    # Examples
+    #
+    #   self.users
+    #   # => #<Coop::User @group_id=12345>
+    #
+    # Returns a Coop::User instance with the group_id set
+    def users
+      User.new({ group_id: self.id }).all
+    end
   end
 end

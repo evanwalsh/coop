@@ -45,9 +45,7 @@ module Coop
     #
     # Returns a Coop::User instance
     def user(id)
-      Coop::User.new({
-        id: id
-      })
+      Coop::User.find(id)
     end
   end
 end
