@@ -39,7 +39,9 @@ Finally, posting a status update is pretty simple.
 
     group.post! "This is a status update"
 
-Also, you can use `.post_as_cobot!` instead to, well, post as Cobot.
+Also, you can use `.post_as_cobot!` instead to, well, post as Cobot. Just add another argument with your secret key, like so:
+
+    group.post_as_cobot! "This is Cobot. Beep boop.", "MySuperSecretAPIKeyFromCoOp"
 
 ### Agendas
 
