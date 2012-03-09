@@ -10,11 +10,12 @@ module Coop
     # Examples
     #
     #   Coop::Session.new("test@example.com", "password123")
+    #   # => #<Coop::Session @email="test@example.com">
     #
     # Returns a Coop::Session instance
     def initialize(email, password)
       @email = email
-      @password = password
+      password = password
     end
     
     # Public: Creates a Coop::Group object
@@ -24,6 +25,7 @@ module Coop
     # Examples
     #
     #   session.group(12345)
+    #   # => #<Coop::Group @id=12345>
     #
     # Returns a Coop::Group instance
     def group(id)
@@ -39,6 +41,7 @@ module Coop
     # Examples
     #
     #   session.user(12345)
+    #   # => #<Coop::User @id=12345>
     #
     # Returns a Coop::User instance
     def user(id)

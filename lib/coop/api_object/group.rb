@@ -5,7 +5,7 @@ module Coop
     # Examples
     #
     #   self.statuses
-    #   # => #<Coop::Status>
+    #   # => #<Coop::Status @group_id=12345>
     #
     # Returns a Coop::Status instance with the group_id set
     def statuses

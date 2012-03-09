@@ -17,6 +17,7 @@ module Coop
     # Examples
     #
     #   Coop.new("test@example.com", "password123")
+    #   # => #<Coop::Session @email="test@example.com">
     #
     # Returns an authenticated Coop::Session object
     def new(email, password)
@@ -31,8 +32,9 @@ module Coop
     # Examples
     #
     #   Coop.get_parsed("/groups/12345")
+    #   # => [{"type" => "Note", "users" => ...}]
     #
-    # Returns Array or APIObject, depending on response
+    # Returns Array of APIObjects or APIObject, depending on response argument
     def get_parsed(*args)
       APIObject.parse_response(self.get(*args))
     end

@@ -9,6 +9,7 @@ module Coop
     # Examples
     #
     #   APIObject.parse_response(HTTParty.get("http://coopapp.com/groups"))
+    #   # => [{"type" => "Note", "users" => ...}]
     #
     # Returns a singular or array of APIObjects, depending on what it's fed
     def self.parse_response(response)
