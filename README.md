@@ -49,7 +49,7 @@ Also, you can mess with the group's agendas API. Try this:
 
     group.agenda
 
-It returns a Coop::Agenda object, with all the data. Yeah. Also, all the group's user agendas are accessible, along with the authenticated user's agenda. Just check out `group.user_agendas` and `group.my_agenda`
+It returns a Coop::Agenda object, with `.global`, `.users`, `.user`, which will give you the group's agenda, all the user's individual agendas, and the authenticated user's agenda, respectively.
 
 ### The rest of the API
 
