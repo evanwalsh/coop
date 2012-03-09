@@ -43,4 +43,8 @@ class TestGroup < MiniTest::Unit::TestCase
     
     assert_equal "/statuses/123456", @group.post_as_cobot!("Testing update as Cobot", "BeepBoopAPIKeyGoesHere")
   end
+  
+  def test_agenda
+    assert_instance_of Coop::Agenda, @group.agenda
+  end
 end

@@ -40,5 +40,9 @@ module Coop
     def post_as_cobot!(message, api_key)
       Status.new({ group_id: self.id }).post_as_cobot!(message, api_key)
     end
+    
+    def agenda
+      Agenda.new({ group_id: self.id })
+    end
   end
 end
