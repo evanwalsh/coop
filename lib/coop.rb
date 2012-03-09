@@ -1,4 +1,5 @@
 require 'httparty'
+require 'coop/error'
 require 'coop/api_object'
 require 'coop/session'
 require 'coop/version'
