@@ -46,4 +46,34 @@ class TestStatus < MiniTest::Unit::TestCase
 
     assert_instance_of Array, @status.recent
   end
+  
+  def test_where_user
+    stub_get("/groups/12345/users/12345").with({
+      headers: { 'Accept' => 'application/json' }
+    }).to_return({
+      body: fixture('statuses_for_user.json')
+    })
+    
+    assert_instance_of Array, @status.where({ user_id: 12345 })
+  end
+  
+  def test_where_date
+    stub_get("/groups/12345/20120303").with({
+      headers: { 'Accept' => 'application/json' }
+    }).to_return({
+      body: fixture('statuses_for_user.json')
+    })
+    
+    assert_instance_of Array, @status.where({ date: Date.new(2012, 03, 03) })
+  end
+  
+  def test_where_user_and_date
+    stub_get("/groups/12345/users/12345/20120303").with({
+      headers: { 'Accept' => 'application/json' }
+    }).to_return({
+      body: fixture('statuses_for_user.json')
+    })
+    
+    assert_instance_of Array, @status.where({ user_id: 12345, date: Date.new(2012, 03, 03) })
+  end
 end
