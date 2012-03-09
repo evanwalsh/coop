@@ -4,6 +4,9 @@ module Coop
 
   # Raised when Co-op returns the HTTP status code 400
   class BadRequest < Error; end
+  
+  # Raised when Co-op returns the HTTP status code 401
+  class Unauthorized < Error; end
 
   # Raised when Co-op returns the HTTP status code 404
   class NotFound < Error; end

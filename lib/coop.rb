@@ -37,7 +37,20 @@ module Coop
     #
     # Returns Array of APIObjects or APIObject, depending on response argument
     def get_parsed(*args)
-      APIObject.parse_response(self.get(*args))
+      begin
+        request = self.get(*args)
+        
+        raise BadRequest if request.response.code == "400"
+        raise Unauthorized if request.response.code == "401"
+        raise NotFound if request.response.code == "404"
+        raise InternalServerError if request.response.code == "500"
+        raise ServiceUnavailable if request.response.code == "503"
+        
+        APIObject.parse_response(request)
+        
+      rescue MultiJson::DecodeError
+        nil
+      end
     end
   end
 end
