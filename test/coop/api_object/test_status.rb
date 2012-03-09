@@ -36,4 +36,14 @@ class TestStatus < MiniTest::Unit::TestCase
     
     assert_equal "/statuses/123456", @status.post_as_cobot!("Testing update as Cobot", "BeepBoopAPIKeyGoesHere")
   end
+  
+  def test_recent
+    stub_get("/groups/12345/statuses").with({
+      headers: { 'Accept' => 'application/json' }
+    }).to_return({
+      body: fixture('statuses.json')
+    })
+
+    assert_instance_of Array, @status.recent
+  end
 end

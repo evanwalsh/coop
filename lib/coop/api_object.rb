@@ -1,4 +1,5 @@
 require 'hashie'
+require 'json'
 
 module Coop
   class APIObject < Hashie::Mash    
@@ -13,7 +14,7 @@ module Coop
     #
     # Returns a singular or array of APIObjects, depending on what it's fed
     def self.parse_response(response)
-      response = response.parsed_response
+      response = JSON.parse(response.parsed_response)
       if response.class == Array
         output = Array.new
         response.each do |item|
