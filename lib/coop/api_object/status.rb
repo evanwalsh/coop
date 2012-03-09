@@ -45,7 +45,8 @@ module Coop
       Coop.post(
         "/groups/#{self.group_id}/statuses",
         query: { status: message, key: api_key }, 
-        headers: { "Accept" => "application/xml" }
+        headers: { "Accept" => "application/xml" },
+        basic_auth: nil
       ).headers["Location"]
     end
     
