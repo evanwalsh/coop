@@ -16,7 +16,7 @@ class TestStatus < MiniTest::Unit::TestCase
   end
   
   def test_post
-    stub_post("/groups/#{@group.id}/statuses").with({
+    stub_post("/groups/12345/statuses").with({
       headers: { 'Accept' => 'application/xml' },
       query: { status: "Testing update" }
     }).to_return({ 
@@ -27,7 +27,7 @@ class TestStatus < MiniTest::Unit::TestCase
   end
   
   def test_post_as_cobot
-    stub_post("/groups/12345/statuses").with({
+    stub_request(:post, "http://coopapp.com/groups/12345/statuses").with({
       headers: { 'Accept' => 'application/xml' },
       query: { key: "BeepBoopAPIKeyGoesHere", status: "Testing update as Cobot" }
     }).to_return({ 
