@@ -6,7 +6,7 @@ require 'coop/version'
 module Coop
   include HTTParty
   base_uri 'http://coopapp.com'
-  headers "Accept" => "application/json"
+  headers "Accept" => "application/json", "User-Agent" => "coop-gem"
   
   class << self
     # Public: Shortcut for creating a new Coop::Session for API stuff

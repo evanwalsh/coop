@@ -14,7 +14,7 @@ module Coop
     #
     # Returns a singular or array of APIObjects, depending on what it's fed
     def self.parse_response(response)
-      response = JSON.parse(response.parsed_response)
+      response = response.parsed_response.class == String ? JSON.parse(response.parsed_response) : response.parsed_response
       if response.class == Array
         output = Array.new
         response.each do |item|
