@@ -5,6 +5,7 @@ module Coop
     # Examples
     #
     #   Status.new({ group_id: 12345 }).recent
+    #   # => [{"type" => "Note", "users" => ...}]
     #
     # Returns an Array of statuses as APIObjects
     def recent
@@ -18,6 +19,7 @@ module Coop
     # Examples
     #
     #   Status.new({ group_id: 12345 }).post! "Is this computer?"
+    #   # => "/statuses/123456"
     #
     # Returns String of new status' URL
     def post!(message)
@@ -35,13 +37,14 @@ module Coop
     #
     # Examples
     #
-    #   Status.new({ group_id: 12345 }).post_as_cobot! "YES, THIS IS COMPUTER"
+    #   Status.new({ group_id: 12345 }).post_as_cobot! "YES, THIS IS COMPUTER", "THISISMYSECRETKEY"
+    #   # => "/statuses/123456"
     #
     # Returns String of new status' URL
     def post_as_cobot!(message, api_key)
       Coop.post(
-        "/groups/#{self.group_id}/statuses?key=#{api_key}", 
-        query: { status: message }, 
+        "/groups/#{self.group_id}/statuses",
+        query: { status: message, key: api_key }, 
         headers: { "Accept" => "application/xml" }
       ).headers["Location"]
     end
