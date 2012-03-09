@@ -16,10 +16,24 @@ class TestStatus < MiniTest::Unit::TestCase
   end
   
   def test_post
-    assert_instance_of String, @status.post!("Testing update")
+    stub_post("/groups/#{@group.id}/statuses").with({
+      headers: { 'Accept' => 'application/xml' },
+      query: { status: "Testing update" }
+    }).to_return({ 
+      headers: { 'Location' => '/statuses/123456' } 
+    })
+    
+    assert_equal "/statuses/123456", @status.post!("Testing update")
   end
   
   def test_post_as_cobot
-    assert_instance_of String, @status.post_as_cobot!("Testing update as Cobot", "BeepBoopAPIKeyGoesHere")
+    stub_post("/groups/12345/statuses").with({
+      headers: { 'Accept' => 'application/xml' },
+      query: { key: "BeepBoopAPIKeyGoesHere", status: "Testing update as Cobot" }
+    }).to_return({ 
+      headers: { 'Location' => '/statuses/123456' } 
+    })
+    
+    assert_equal "/statuses/123456", @status.post_as_cobot!("Testing update as Cobot", "BeepBoopAPIKeyGoesHere")
   end
 end

@@ -1,18 +1,1 @@
-HTTP/1.1 200 OK
-Server: nginx
-Date: Sat, 03 Mar 2012 17:09:49 GMT
-Content-Type: application/json; charset=utf-8
-Connection: close
-Status: 200
-X-Powered-By: Phusion Passenger (mod_rails/mod_rack)
-X-UA-Compatible: IE=Edge,chrome=1
-Cache-Control: max-age=0, private, must-revalidate
-Etag: "c0c89ac8e666ec4bf00e3f6aa2db7cd3"
-X-Runtime: 0.044136
-Set-Cookie: _co-op_session=BAh7ByIPc2Vzc2lvbl9pZCIlZDkxODYxM2ZkMWQxZTVlOTE1MjkxY2EwMWE0MmIzYzIiDHVzZXJfaWRpAile--53dbcc38430104b024dd81af9d740e5898c2bdb4; path=/; HttpOnly
-X-Harvest-Box: cluster1
-X-Harvest-FE: lb2
-X-Harvest-DC: vxny
-Transfer-Encoding: Identity
-
 [{"updated_at":"2012-03-03T12:00:42-05:00","group_id":12345,"text":"Bacon slap","id":916410,"created_at":"2012-03-03T12:00:42-05:00","user":{"avatar_thumb_url":"http://coopapp.com/uploads/avatars/12345/thumb/9-m.png?1330791782","name":"Evan Walsh","email":"evan@massivedanger.com","id":12345},"type":"Note"},{"updated_at":"2012-03-02T22:51:00-05:00","group_id":12345,"text":"This is an image URL: http://i.imgur.com/vgiiq.jpg","id":916273,"created_at":"2012-03-02T22:51:00-05:00","user":{"avatar_thumb_url":"http://coopapp.com/uploads/avatars/12345/thumb/9-m.png?1330791782","name":"Evan Walsh","email":"evan@massivedanger.com","id":12345},"type":"Note"},{"updated_at":"2012-03-02T22:50:15-05:00","group_id":12345,"text":"This is a test post on Co-op","id":916271,"created_at":"2012-03-02T22:50:15-05:00","user":{"avatar_thumb_url":"http://coopapp.com/uploads/avatars/12345/thumb/9-m.png?1330791782","name":"Evan Walsh","email":"evan@massivedanger.com","id":12345},"type":"Note"}]

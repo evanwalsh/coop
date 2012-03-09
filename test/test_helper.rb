@@ -1,17 +1,35 @@
-require "minitest/autorun"
-require "turn/autorun"
-require "coop"
+require 'minitest/autorun'
+require 'turn/autorun'
+require 'webmock/test_unit'
+require 'coop'
 
-# def api_url(path)
-#   "http://test%40example.com:password@coopapp.com#{path}"
-# end
-# 
-# def fixture(file)
-#   File.read(File.join(Dir.pwd, "test", "fixtures", file))
-# end
+include WebMock::API
+stub_request(:any, Coop.base_uri)
 
-# def fakeweb_setup(method, path, fixture_file)
-#   FakeWeb.register_uri(method, api_url(path), response: fixture(fixture_file))
+def fixture(file)
+  File.read(File.join(Dir.pwd, 'test', 'fixtures', file))
+end
+
+def auth_path(path)
+  "http://test%40example.com:password@coopapp.com#{path}"
+end
+
+def stub_delete(path)
+  stub_request(:delete, auth_path(path))
+end
+
+def stub_get(path)
+  stub_request(:get, auth_path(path))
+end
+
+def stub_post(path)
+  stub_request(:post, auth_path(path))
+end
+
+def stub_put(path)
+  stub_request(:put, auth_path(path))
+end
+
+# WebMock.after_request do |request_signature, response|
+#   puts "Request #{request_signature} was made and #{response} was returned"
 # end
-# 
-# FakeWeb.allow_net_connect = false

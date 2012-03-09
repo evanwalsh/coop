@@ -1,18 +1,1 @@
-HTTP/1.1 200 OK
-Server: nginx
-Date: Sun, 04 Mar 2012 00:14:12 GMT
-Content-Type: application/json; charset=utf-8
-Connection: close
-Status: 200
-X-Powered-By: Phusion Passenger (mod_rails/mod_rack)
-X-UA-Compatible: IE=Edge,chrome=1
-Cache-Control: max-age=0, private, must-revalidate
-Etag: "45557cfd2cb2293cd223bc2f862c7803"
-X-Runtime: 0.023831
-Set-Cookie: _co-op_session=BAh7ByIPc2Vzc2lvbl9pZCIlZThhMTUxOTgyOTk4ZmY0NTAyZjNlMzEyNjk1NjY3YmMiDHVzZXJfaWRpAile--ed86e6a6a5d5ed0dc40cb8b65053e58c4b03a68e; path=/; HttpOnly
-X-Harvest-Box: cluster1
-X-Harvest-FE: lb2
-X-Harvest-DC: vxny
-Transfer-Encoding: Identity
-
 {"agenda_html":"<p>This is an agenda</p>","group_id":12345,"agenda":"This is an agenda"}

@@ -1,4 +1,4 @@
-# Coop! The Ruby gem! [![Build Status](https://secure.travis-ci.org/evanwalsh/coop.png?branch=master)](http://travis-ci.org/evanwalsh/coop)
+# Coop! The Ruby gem! [![Build Status](https://secure.travis-ci.org/evanwalsh/coop.png?branch=master)](http://travis-ci.org/evanwalsh/coop) [![Dependency Status](https://gemnasium.com/evanwalsh/coop.png)](https://gemnasium.com/evanwalsh/coop)
 
 Ok, so let's say that you're the kind of person that wants to interact with Co-op via its API.
 
