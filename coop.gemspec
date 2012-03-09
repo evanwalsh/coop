@@ -29,4 +29,5 @@ Gem::Specification.new do |gem|
   
   gem.add_dependency "hashie", "~> 1.2.0"
   gem.add_dependency "httparty", "~> 0.8.1"
+  gem.add_dependency "json-jruby", "~> 1.5.0" if RUBY_PLATFORM == "java"
 end
