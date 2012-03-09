@@ -17,9 +17,9 @@ module Coop
     # Examples
     #
     #   Agenda.new({ group_id: 12345 }).users
-    #   # => #<Coop::APIObject>
+    #   # => [#<Coop::APIObject>, #<Coop::APIObject>, ...]
     #
-    # Returns APIObject with the agenda data
+    # Returns Array of APIObject with the agenda data
     def users
       Coop.get_parsed("/groups/#{self.group_id}/user_agendas")
     end

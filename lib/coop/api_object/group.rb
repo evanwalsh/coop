@@ -41,6 +41,14 @@ module Coop
       Status.new({ group_id: self.id }).post_as_cobot!(message, api_key)
     end
     
+    # Public: The base for all agenda API calls
+    #
+    # Examples
+    #
+    #   self.statuses
+    #   # => #<Coop::Agenda @group_id=12345>
+    #
+    # Returns a Coop::Agenda instance with the group_id set
     def agenda
       Agenda.new({ group_id: self.id })
     end
