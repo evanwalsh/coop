@@ -51,6 +51,20 @@ Also, you can mess with the group's agendas API. Try this:
 
 It returns a Coop::Agenda object, with `.global`, `.users`, `.user`, which will give you the group's agenda, all the user's individual agendas, and the authenticated user's agenda, respectively.
 
+### Users
+
+You can get info about a specific user or a group's users. It's pretty simple.
+
+For a group's users, just try this:
+
+    group.users.all
+
+That'll get you the info dump of all the users. For a _specific_ user, you need their id. Then, you call:
+
+    group.users.find(12345)
+
+Where "12345" would be that user's id. That'll get you just info for that user.
+
 ### The rest of the API
 
 In further versions of the gem, I'll be implementing the rest of the API. I want to keep it focused, for now. Also, the current Co-op API isn't working completely, so that's another roadblock that should be cleared up soon. I hope.
