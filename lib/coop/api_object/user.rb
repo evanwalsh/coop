@@ -21,7 +21,7 @@ module Coop
     #   User.find(12345)
     #   # => #<Coop::APIObject>
     #
-    # Returns  APIObject with user data
+    # Returns an APIObject with user data
     def self.find(id)
       Coop.get_parsed("/users/#{id}")
     end
