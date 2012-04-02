@@ -1,6 +1,12 @@
 # Coop! The Ruby gem!
 ## Changelog
 
-### 1.0 (9 March 2012)
+### 1.1.0
+#### 1 April 2012
 
-Initial release
+- List all groups a user belongs to
+
+### 1.0
+#### 9 March 2012
+
+- Initial release
