@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Coop by evanwalsh</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Coop</h1>
+<p>Interact with the Co-op API</p>
+        <p class="view"><a href="https://github.com/evanwalsh/coop">View the Project on GitHub <small>evanwalsh/coop</small></a></p>
+        <ul>
+          <li><a href="https://github.com/evanwalsh/coop/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/evanwalsh/coop/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/evanwalsh/coop">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Ok, so let's say that you're the kind of person that wants to interact with <a href="http://coopapp.com">Co-op</a> via its API.</p>
+
+<p>You've come to the right place.</p>
+
+<h2>Installation and setup</h2>
+
+<p>To install it, just run <code>gem install coop</code> from the command line or add <code>gem 'coop'</code> to your project's Gemfile.</p>
+
+<p>Now, to use it in your code, do this, but substitute in your own Co-op login details:</p>
+
+<pre><code>coop = Coop.new("user_email@example.com", "user_password123")
+</code></pre>
+
+<p>That's just the beginning, though.</p>
+
+<h2>Usage</h2>
+
+<p>With your new Co-op API object, you can access all the API features you'd need.</p>
+
+<p>First, you'll need a group object.</p>
+
+<pre><code>group = coop.group(12345)
+</code></pre>
+
+<h3>Statuses</h3>
+
+<p>That'll give you access to a whole load of stuff. If you want statuses, use this:</p>
+
+<pre><code>group.statuses
+</code></pre>
+
+<p>You'll get an object that'll let you use .recent and .where on that to get either the most recent 50 statuses or to get statuses by user or date.</p>
+
+<pre><code>group.statuses.recent
+group.statuses.where({ user_id: 54321, date: Date.today })
+</code></pre>
+
+<p>You'll get an array of Coop::Status objects, with all the attributes you'd expect. Cool.</p>
+
+<p>Finally, posting a status update is pretty simple.</p>
+
+<pre><code>group.post! "This is a status update"
+</code></pre>
+
+<p>Also, you can use <code>.post_as_cobot!</code> instead to, well, post as Cobot. Just add another argument with your secret key, like so:</p>
+
+<pre><code>group.post_as_cobot! "This is Cobot. Beep boop.", "MySuperSecretAPIKeyFromCoOp"
+</code></pre>
+
+<h3>Agendas</h3>
+
+<p>Also, you can mess with the group's agendas API. Try this:</p>
+
+<pre><code>group.agenda
+</code></pre>
+
+<p>It returns a Coop::Agenda object, with <code>.global</code>, <code>.users</code>, <code>.user</code>, which will give you the group's agenda, all the user's individual agendas, and the authenticated user's agenda, respectively.</p>
+
+<h3>Users</h3>
+
+<p>You can get info about a specific user or a group's users. It's pretty simple.</p>
+
+<p>For a group's users, just try this:</p>
+
+<pre><code>group.users.all
+</code></pre>
+
+<p>That'll get you the info dump of all the users. For a <em>specific</em> user, you need their id. Then, you call:</p>
+
+<pre><code>group.users.find(12345)
+</code></pre>
+
+<p>Where "12345" would be that user's id. That'll get you just info for that user.</p>
+
+<h3>The rest of the API</h3>
+
+<p>In further versions of the gem, I'll be implementing the rest of the API. I want to keep it focused, for now. Also, the current Co-op API isn't working completely, so that's another roadblock that should be cleared up soon. I hope.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/evanwalsh">evanwalsh</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
