@@ -3,7 +3,7 @@ require File.expand_path('../lib/coop/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Evan Walsh"]
-  gem.email         = ["evan@nothingconcept.com"]
+  gem.email         = ["evan@massivedanger.com"]
   gem.description   = %q{Interact with the Co-op API with Ruby}
   gem.summary       = %q{Interact with the Co-op API with Ruby}
   gem.homepage      = "http://github.com/evanwalsh/coop"
@@ -14,20 +14,14 @@ Gem::Specification.new do |gem|
   gem.name          = "coop"
   gem.require_paths = ["lib"]
   gem.version       = Coop::VERSION
-  
+
   gem.required_ruby_version = '>= 1.9.2'
-  
+
   gem.add_development_dependency "rake"
   gem.add_development_dependency "minitest", "~> 2.11.3"
-  gem.add_development_dependency "guard-minitest", "~> 0.5.0"
   gem.add_development_dependency "turn", "~> 0.9.3"
   gem.add_development_dependency "webmock", "~> 1.8.2"
-  
-  if RUBY_PLATFORM.downcase.include?("darwin")
-    gem.add_development_dependency "growl", "~> 1.0.3"
-  end
-  
-  gem.add_dependency "hashie", "~> 1.2.0"
-  gem.add_dependency "httparty", "~> 0.8.1"
-  gem.add_dependency "json-jruby", "~> 1.5.0" if RUBY_PLATFORM == "java"
+
+  gem.add_dependency "hashie", "~> 3.3.1"
+  gem.add_dependency "httparty", "~> 0.13.1"
 end

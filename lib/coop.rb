@@ -8,7 +8,7 @@ module Coop
   include HTTParty
   base_uri 'http://coopapp.com'
   headers "Accept" => "application/json", "User-Agent" => "coop-gem"
-  
+
   class << self
     # Public: Shortcut for creating a new Coop::Session for API stuff
     #
@@ -22,10 +22,10 @@ module Coop
     #
     # Returns an authenticated Coop::Session object
     def new(email, password)
-      basic_auth email, password      
+      basic_auth email, password
       Coop::Session.new(email, password)
     end
-    
+
     # Public: Parse an HTTParty response into APIObjects
     #
     # *args - any valid arguments for HTTParty.get
@@ -39,17 +39,14 @@ module Coop
     def get_parsed(*args)
       begin
         request = self.get(*args)
-        
+
         raise BadRequest if request.response.code == "400"
         raise Unauthorized if request.response.code == "401"
         raise NotFound if request.response.code == "404"
         raise InternalServerError if request.response.code == "500"
         raise ServiceUnavailable if request.response.code == "503"
-        
+
         APIObject.parse_response(request)
-        
-      rescue MultiJson::DecodeError
-        nil
       end
     end
   end
